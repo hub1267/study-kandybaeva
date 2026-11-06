@@ -1,0 +1,14 @@
+digraph ER {
+  graph [rankdir=LR, bgcolor="white", fontname="Arial"];
+  node [shape=record, fontname="Arial", fontsize=11, style="filled", fillcolor="#eef4fb", color="#55769a"];
+  edge [fontname="Arial", fontsize=10, color="#55769a"];
+  users [label="{users|PK id\llogin UNIQUE\lpassword_hash\lemail\lphone\lrole\l}"];
+  events [label="{events|PK id\ltitle\levent_date\lvenue\ldescription\l}"];
+  statuses [label="{statuses|PK id\lname UNIQUE\l}"];
+  applications [label="{applications|PK id\lFK user_id\lFK event_id\lFK status_id\lcreated_at\lpayment_method\lroom\lUNIQUE user_id + event_id\l}"];
+  reviews [label="{reviews|PK id\lFK application_id UNIQUE\ltext\lrating 1–5\lcreated_at\l}"];
+  users -> applications [label="1 : N"];
+  events -> applications [label="1 : N"];
+  statuses -> applications [label="1 : N"];
+  applications -> reviews [label="1 : 0..1"];
+}

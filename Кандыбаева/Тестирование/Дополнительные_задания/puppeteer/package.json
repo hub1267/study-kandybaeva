@@ -1,0 +1,11 @@
+{
+  "name": "conference-puppeteer-test",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node smoke.js"
+  },
+  "devDependencies": {
+    "puppeteer-core": "25.16.0"
+  }
+}

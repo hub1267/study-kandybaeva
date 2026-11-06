@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Магазин обуви — заказы</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header><strong>Магазин обуви</strong><span id="current-user">Гость</span></header>
+  <main>
+    <h1>Заказы</h1>
+    <p>Учебное приложение для просмотра и редактирования заказов.</p>
+    <form id="login-form"><label>Логин <input name="login" required></label><button>Войти</button><button type="button" id="logout">Выйти</button></form>
+    <p class="hint">Учебные логины: manager и admin.</p>
+    <p id="message" role="status"></p>
+    <section id="orders-section" hidden>
+      <h2>Список заказов</h2>
+      <table><thead><tr><th>Номер</th><th>Дата</th><th>Покупатель</th><th></th></tr></thead><tbody id="orders"></tbody></table>
+    </section>
+    <dialog id="order-dialog">
+      <form id="order-form">
+        <h2 id="order-title"></h2>
+        <label>Дата заказа <input type="date" id="order-date" required></label>
+        <table><thead><tr><th>Товар</th><th>Размер</th><th>Количество</th><th>Цена</th><th>Сумма</th><th></th></tr></thead><tbody id="items"></tbody></table>
+        <p>Итого: <strong id="total"></strong></p>
+        <button type="submit" id="save">Сохранить изменения</button>
+        <button type="button" id="close">Закрыть</button>
+      </form>
+    </dialog>
+  </main>
+</body>
+</html>

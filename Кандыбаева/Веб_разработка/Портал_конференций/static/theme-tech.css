@@ -1,0 +1,4 @@
+:root { --navy:#193d37; --blue:#157660; }
+.tag { background:#d9f1e7; color:#175d4e; }
+.site-header { border-bottom:4px solid #a7dac6; }
+.brand { display:inline-flex; align-items:center; gap:8px; }

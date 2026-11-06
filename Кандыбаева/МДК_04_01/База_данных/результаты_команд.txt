@@ -1,0 +1,43 @@
+$ sqlite3 test.db < schema.sql
+
+$ sqlite3 test.db < demo_data.sql
+
+$ sqlite3 test.db '.tables'
+categories     order_items    products       stock        
+manufacturers  orders         sizes          users        
+
+$ sqlite3 -header -column test.db < queries.sql
+name     price
+-------  -----
+Ботинки  12000
+Туфли    15000
+name   
+-------
+Ботинки
+Туфли  
+name   models
+-----  ------
+Север  1     
+Город  2     
+name           average_price
+-------------  -------------
+Женская обувь  13500.0      
+Мужская обувь  7500.0       
+name     quantity
+-------  --------
+Ботинки  2       
+Туфли    1       
+name     price  discount_price
+-------  -----  --------------
+Ботинки  12000  9000.0        
+Туфли    15000  11250.0       
+id  full_name     total
+--  ------------  -----
+1   Иванова Анна  15000
+size
+----
+37  
+42  
+
+$ python3 create_db.py
+INFO: Созданы таблицы: categories, manufacturers, order_items, orders, products, sizes, stock, users
